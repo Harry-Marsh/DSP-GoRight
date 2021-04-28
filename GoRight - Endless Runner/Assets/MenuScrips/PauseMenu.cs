@@ -16,14 +16,14 @@ public class PauseMenu : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)) //if escape key is pressed 
         {
-            if (GameIsPaused)
+            if (GameIsPaused) // checks if game is already paused.
             {
-                Resume();
+                Resume(); // resumes game
             } else
             {
-                Pause();
+                Pause(); // pauses game
             }
 
         }
@@ -32,29 +32,30 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
-        GameIsPaused = false;
-        pauseButton.SetActive(true);
+        //closes the pause menu and sets the time scale to normal
+        pauseMenuUI.SetActive(false); //disables pause screen
+        Time.timeScale = 1f; // set time scale to normal
+        GameIsPaused = false; // sets pause to false
+        pauseButton.SetActive(true); //shows pause button
     }
 
    public void Pause()
     {
-        pauseMenuUI.SetActive(true);
-        pauseButton.SetActive(false);
-        Time.timeScale = 0f;
+        pauseMenuUI.SetActive(true); // enable the pause ui
+        pauseButton.SetActive(false); // hides the pause button
+        Time.timeScale = 0f; //sets time sacle to 0
         GameIsPaused = true;
     }
 
     public void LoadMenu()
     {
         Debug.Log("Loading Main Menu...");
-        SceneManager.LoadScene("Start_Menu");
+        SceneManager.LoadScene("Start_Menu"); //loads main menu if retern to menu button pressed
     }
 
     public void Restart()
     {
-        SceneManager.LoadScene("Main_game");
+        SceneManager.LoadScene("Main_game"); // reloads the scene if the player presses restart.
         
     }
 

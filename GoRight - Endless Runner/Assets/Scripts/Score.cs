@@ -12,18 +12,13 @@ public class Score : MonoBehaviour
     [SerializeField] public float timer;
     [SerializeField] public float score;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        scoreValue = -25;
-    }
 
     // Update is called once per frame
     void Update()
     {
-        scoreValue = GameObject.Find("PlatformGenerator").GetComponent<PlatformGeneration>().blockScore;
-        //scoreValue = Mathf.FloorToInt(Time.timeSinceLevelLoad) * 10;
+        scoreValue = GameObject.Find("PlatformGenerator").GetComponent<PlatformGeneration>().blockScore; // gets score from the platofrm generator
+        
 
-        ScoreText.text = "SCORE: " + Math.Truncate(scoreValue);
+        ScoreText.text = "SCORE: " + Math.Truncate(scoreValue); // displays score as text.
     }
 }

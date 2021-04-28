@@ -18,11 +18,11 @@ public class highScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        theHighScore = PlayerPrefs.GetFloat("HighScore", theHighScore);
-        theCurrentHighScore = GameObject.Find("PlayableCharacter").GetComponent<PlayerController>().theHighScore;
+        theHighScore = PlayerPrefs.GetFloat("HighScore", theHighScore); //gets the score from the players saved local
+        theCurrentHighScore = GameObject.Find("PlayableCharacter").GetComponent<PlayerController>().theHighScore; //gets the high score fromk the current playthrough.
         if (theCurrentHighScore > theHighScore)
         {
-            ScoreText.text = "LATEST SCORE: " + theCurrentHighScore;
+            ScoreText.text = "HIGHEST SCORE: " + theCurrentHighScore;
         }else
         {
             ScoreText.text = "HIGHEST SCORE: " + theHighScore;
