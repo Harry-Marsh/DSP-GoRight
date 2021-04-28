@@ -73,6 +73,7 @@
     <Compile Include="Assets\MenuScrips\PauseMenu.cs" />
     <Compile Include="Assets\MenuScrips\SettingsMenu.cs" />
     <Compile Include="Assets\Prefabs\PlayableCharater\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Bondaries.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\PlatformDestroyer.cs" />
     <Compile Include="Assets\Scripts\PlatformGeneration.cs" />

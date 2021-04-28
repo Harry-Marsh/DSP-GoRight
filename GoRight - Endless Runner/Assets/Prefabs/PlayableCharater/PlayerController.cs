@@ -142,10 +142,10 @@ public class PlayerController : MonoBehaviour
             jumpTimer = -1;
         }else if (jumpPressed || (jumpTimer > 0 && Time.time < jumpTimer + jumpGracePeriod))
         {
-            if (jumpedAmount < 3) // checks if player has jumed more then once.
+            if (jumpedAmount < 1) // checks if player has jumed more then once.
             {
                 jumpedAmount += 1;
-                velocity.y += Mathf.Sqrt(jumpHeight * -2 * gravity);
+                velocity.y += Mathf.Sqrt(jumpHeight * -4 * gravity);
                 if (jumpSoundEffect != null) // checks if a sound is already playing
                 {
                     AudioSource.PlayClipAtPoint(jumpSoundEffect, transform.position, 1f); // plays jump sound when input detected
